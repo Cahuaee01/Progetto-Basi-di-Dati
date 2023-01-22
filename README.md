@@ -23,6 +23,6 @@ File SQL contenenti:
 
 -Popolazione del DB (population.sql).
 
--README contenente i commenti all’SQL (questo file, i commenti all'sql sono presenti sui suddetti file sql).
+-README contenente i commenti all’SQL (questo file; i commenti all'sql sono presenti sui suddetti file sql).
 
 Simone Liberti & Emilia Napolano.
