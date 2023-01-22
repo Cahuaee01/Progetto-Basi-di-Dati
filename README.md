@@ -8,10 +8,10 @@ I software utilizzati sono:
 E' possibile individuare all'interno di questa repository 
 Documentazione contenente (main.pdf):
 1. Documento di Design della base di dati:
-  1.a. Diagramma Class Diagram della base di dati.
-  1.b. Ristrutturazione Class Diagram
-  1.c. Dizionario delle Classi, delle Associazioni e dei Vincoli.
-  1.d. Schema Logico con descrizione di Trigger e Procedure individuate.
+a. Diagramma Class Diagram della base di dati.
+b. Ristrutturazione Class Diagram.
+c. Dizionario delle Classi, delle Associazioni e dei Vincoli.
+d. Schema Logico con descrizione di Trigger e Procedure individuate.
   
 File SQL contenenti:
 a. Creazione della struttura della base di dati (tables.sql che contiene le tabelle; trigger.sql che contiene i trigger, le procedure e le views; dump.sql che contiene il dump generato da pgAdmin; all.sql che contiene tutto ciò che è direttamente copia-incollabile su postgres in modo da vedere il funzionamento del database)
