@@ -1,0 +1,37 @@
+\chapter{Analisi del progetto e requisiti individuati}
+\section{Dipendenti dell'azienda}
+Per ogni dipendente si assegnerà una categoria basata sul numero di anni di servizio. Ogni dipendente appartiene a una sola fra quattro categorie:
+\begin{itemize}
+    \item Dipendente Junior
+    \item Dipendente Middle
+    \item Dipendente Senior
+    \item Dipendente Dirigente
+\end{itemize}
+Ogni dipendente può essere identificato con un nome, un cognome e un identificativo unico nel sistema (codice fiscale). Per ogni dipendente può essere specificato una mansione e un ufficio.
+
+\section{Passaggio di ruolo}
+Le categorie sono assegnate ai dipendenti in base all'anzianità, rispettivamente:
+\begin{itemize}
+    \item Junior: meno di 3 anni
+    \item Middle: compreso tra 3 e 7 anni
+    \item Senior: più di 7 anni
+\end{itemize}
+L'unica categoria che non richiede anzianità è la categoria Dirigente, che può essere raggiunta solo in base alle proprie capacità.
+Di conseguenza sarà necessario tracciare i dati di carriera di ogni dipendente, memorizzando la prima data di assunzione e il numero di anni di servizio attraverso un'entità separata. 
+
+\section{Gestione dei laboratori}
+I laboratori sono formati da gruppi di dipendenti di qualsiasi categoria che lavorano a specifici topic di un determinato progetto. Un laboratorio può essere gestito solo da un dipendente senior, che avrà titolo di responsabile scientifico. Ad ogni progetto saranno assegnati al più 3 laboratori.
+
+\section{Gestione dei progetti}
+Un progetto è identificato da un CUP (Codice Unico Progetto) e da un nome (unico nel sistema). Ogni progetto può essere gestito solo da un dipendente Dirigente e avrà, come per i laboratori, un referente scientifico, che potrà essere solo un dipendente senior.
+
+\section{Requisiti aggiuntivi}
+Come requisiti aggiuntivi sono stati identificati:
+\begin{itemize}
+    \item Tracciamento dei contratti
+    \item Collaborazione tra più aziende
+\end{itemize}
+Un contratto può essere caratterizzato da un tipo e una durata temporale, oltre a tenere traccia della data della firma e del salario. \\
+Più aziende possono collaborare a uno stesso progetto. \\
+Un contratto a tempo determinato viene rinnovato automaticamente ogni 3 anni.
+Un dipendente puo' avere un aumento di salario anche senza passaggio di ruolo o senza aver firmato un nuovo contratto.

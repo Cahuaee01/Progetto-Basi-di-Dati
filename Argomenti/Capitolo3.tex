@@ -1,0 +1,180 @@
+\chapter{Dizionari}
+\section{Introduzione}
+In questo capitolo verranno analizzate le singole entità, le loro associazioni ed eventuali vincoli e di seguito riportato un dizionario contenente le loro descrizioni e caratteristiche. 
+
+\section{Dizionario delle classi}
+
+\begingroup
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{xltabular}{\textwidth}{l X X}
+        \caption{Dizionario delle classi.} \label{tab:classi} \\
+
+        \hline \multicolumn{1}{|l}{\textbf{Classe}} & \multicolumn{1}{X}{\textbf{Descrizione}} & \multicolumn{1}{X|}{\textbf{Attributi}} \\ \hline 
+        \endfirsthead
+
+        \multicolumn{3}{c}%
+        {\tablename\ \thetable{} Dizionario delle classi} \\
+        \hline \multicolumn{1}{|l}{\textbf{Classe}} & \multicolumn{1}{X}{\textbf{Descrizione}} & \multicolumn{1}{X|}{\textbf{Attributi}} \\ \hline 
+        \endhead
+
+        \multicolumn{3}{r}{{Continua nella pagina successiva}} \\ 
+        \hline
+        \endfoot
+
+        \hline
+        \endlastfoot
+
+        \textbf{Azienda} & Entità descrittrice di un tipo generico di Azienda & \textbf{Nome} (String): Nome dell'azienda, identifica univocamente un'azienda.
+        \newline\textbf{Titolare} (String): Nome del titolare dell'azienda.
+        \newline\textbf{Via} (String): Via della sede dell'azienda, identifica univocamente un'azienda.
+        \newline\textbf{Civico} (String): Civico della sede dell'azienda.
+        \newline\textbf{CAP} (String): Codice di avviamento postale.
+        \newline\textbf{Fatturato} (float): Fatturato dell'azienda.\\
+        \hline
+
+        \textbf{Dipendente} & Entità descrittrice di un profilo generico di un dipendente aziendale & \textbf{Nome} (String): Nome del dipendente.
+        \newline\textbf{Cognome} (String): Cognome del dipendente.
+        \newline\textbf{CF} (String): Codice Fiscale del dipendente, identifica univocamente un dipendente.
+        \newline\textbf{Specializzazione} (String): Laurea del dipendente (se conseguita).
+        \newline\textbf{Ruolo} (String): Categoria di appartenenza del dipendente.
+        \newline\textbf{Ufficio} (String): Ufficio dove lavora il dipendente.
+        \newline\textbf{Mansione} (String): Lavoro svolto abitualmente dal dipendente. \\
+        \hline
+
+        \textbf{Contratto} & Entità descrittrice di un contratto firmato da un dipendente per una certa azienda & \textbf{IDContratto} (int): identifica univocamente un contratto.
+        \newline\textbf{Tipo} (String): Tipo di contratto firmato.
+        \newline\textbf{DataFirma} (Date): Data in cui il dipendente firma il contratto.
+        \newline\textbf{ScadenzaContratto} (Date): Data in cui scade il contratto (se è a tempo determinato).
+        \newline\textbf{Stipendio} (float): Stipendio accordato al momento della firma del contratto.\\
+        \hline
+        \textbf{Carriera} & Entità descrittrice della carriera attuale o pregressa di un dipendente. &  \textbf{IDCarriera} (int): identifica univocamente una carriera
+        \newline\textbf{PrimaAssunzione} (Date): Data di prima assunzione del dipendente.
+        \newline\textbf{DataPromozione} (Date): Data della promozione del dipendente.
+        \newline\textbf{RuoloPrecedente} (String): Ultimo ruolo ricoperto dal dipendente prima della promozione.
+        \newline\textbf{AumentoStipendio} (float): Aumento stipendio in percentuale.
+        \newline\textbf{StipendioCorrente} (float): Stipendio aumentato a seguito dell'aumento di stipendio. 
+        \newline\textbf{StipendioPrecedente} (float): Stipendio prima dell'aumento. \\
+        \hline
+
+        \textbf{Progetto} & Entità descrittrice di un progetto finanziato da un'azienda & \textbf{CUP} (String): Codice Unico Progetto, identifica univocamente un progetto. 
+        \newline\textbf{Nome} (String): Nome del progetto. 
+        \newline\textbf{Budget} (float): Budget del progetto. \\
+        \hline
+
+        \textbf{Laboratorio} & Entità descrittrice di un laboratorio. & \textbf{Topic} (String): Argomento principale del laboratorio, identifica univocamente un laboratorio.
+        \newline\textbf{Edificio} (String): Edificio in cui è situato il laboratorio, identifica univocamente un laboratorio. 
+        \newline\textbf{Stanza} (String): Stanza in cui è situato il laboratorio, identifica univocamente un laboratorio. \\
+
+    \end{xltabular}
+\endgroup
+
+\newpage
+\section{Dizionario delle associazioni}
+
+\begingroup
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{2.0}
+    \begin{xltabular}{\textwidth}{l X X}
+        \caption{Dizionario delle associazioni.} \label{tab:associazioni} \\
+        
+        \hline \multicolumn{1}{|l}{\textbf{Nome}} & \multicolumn{1}{X}{\textbf{Descrizione}} & \multicolumn{1}{X|}{\textbf{Classi coinvolte}} \\ \hline 
+        \endfirsthead
+        
+        \multicolumn{3}{c}%
+        {\tablename\ \thetable{} Dizionario delle associazioni} \\
+        \hline \multicolumn{1}{|l}{\textbf{Nome}} & \multicolumn{1}{X}{\textbf{Descrizione}} & \multicolumn{1}{X|}{\textbf{Classi coinvolte}} \\ \hline 
+        \endhead
+        
+        \multicolumn{3}{r}{{Continua nella pagina successiva}} \\ 
+        \hline
+        \endfoot
+        
+        \hline
+        \endlastfoot
+
+        \textbf{Finanziamento} & Esprime la relazione tra l'azienda e il progetto. Un'azienda finanzia uno o più progetti, un progetto è finanziato da una o più aziende. & \textbf{Azienda [1...*]} ruolo \textbf{finanzia:} indica la/le aziende che finanziano un progetto. 
+        \newline\textbf{Progetto [0...*]} ruolo \textbf{è finanziato da:} indica progetti che sono finaziati da una o più aziende. \\
+        \hline
+        \textbf{Assunzione} & Esprime la relazione tra l'azienda e il dipendente. Un'azienda assume uno o più dipendenti, un dipendente è assunto da un'azienda. & \textbf{Azienda [1]} ruolo \textbf{assume:} indica l'azienda che assume un dipendente. 
+        \newline\textbf{Dipendente [1...*]} ruolo \textbf{è assunto da:} indica dipendenti che sono assunti da un'azienda. \\
+        \hline
+        \textbf{Possessione} & Esprime la relazione tra dipendente e carriera. Un dipendente possiede una o più carriere, una carriera è posseduta da un solo dipendente. & \textbf{Dipendente [1]} ruolo \textbf{possiede:} indica il dipendente che possiede una carriera. 
+        \newline\textbf{Carriera[0...*]} ruolo \textbf{è posseduta da:} indica la carriera attuale o le carriere pregresse possedute da un dipendente. \\
+        \hline
+        \textbf{Firmato} & Esprime la relazione tra dipendente e contratto. Un dipendente firma uno o più contratti, un contratto è firmato da un solo dipendente. & \textbf{Dipendente [1]} ruolo \textbf{firma:} indica il dipendente che firma un contratto. 
+        \newline\textbf{Contratto [1...*]} ruolo \textbf{è firmato da:} indica il/i contratti firmati da un dipendente.\\
+        \hline
+        \textbf{Gestione} & Esprime la relazione tra dipendente senior e laboratorio. Un dipendente gestisce più laboratori, un laboratorio è gestito da un solo dipendente. & \textbf{Dipendente [0...1]} ruolo \textbf{gestisce:} indica il dipendente che gestisce un laboratorio. 
+        \newline\textbf{Laboatorio [0...*]} ruolo \textbf{è gestito da:} indica il laboratorio che è gestito da un dipendente. \\
+        \hline
+        \textbf{Referenza} & Esprime la relazione tra dipendente senior e progetto. Un dipendente è referente di uno o più progetti, un progetto è referenziato da un solo dipendente. & \textbf{Dipendente [0...1]} ruolo \textbf{è referente di:} indica il dipendente che è referente scientifico di un progetto. 
+        \newline\textbf{Progetto [0...*]} ruolo \textbf{è referenziato da:} indica il progetto che è referenziato da un dipendente.\\
+        \hline
+        \textbf{Responsabilità} & Esprime la relazione tra dirigente e progetto. Un dipendente è responsabile di uno o più progetti, un progetto ha come responsabile un solo dipendente. & \textbf{Dipendente [0...1]} ruolo \textbf{è responsabile di:} indica il dipendente che è responsabile di un progetto. 
+        \newline\textbf{Progetto [0...*]} ruolo \textbf{ha come responsabile:} indica il progetto che ha come responsabile un dipendente.\\
+        \hline
+        \textbf{Afferenza} & Esprime la relazione tra dipendente e laboratorio. Un dipendente afferisce a uno o più laboratori, un laboratorio è afferito da uno o più dipendenti. & \textbf{Dipendente [1...*]} ruolo \textbf{afferisce:} indica il dipendente che afferisce a un laboratorio. \newline\textbf{Laboratorio [0...*]} ruolo \textbf{è afferito da:} indica il laboratorio che è afferito da un dipendente. \\
+        \hline
+        \textbf{Utilizzo} & Esprime la relazione tra progetto e laboratorio. Un laboratorio è utilizzato da un solo progetto, un progetto utilizza uno o più laboatori. & \textbf{Laboratorio [1...*]} ruolo \textbf{è utilizzato da:} indica il laboratorio che è utilizzato da un progetto. \newline\textbf{Progetto [1]} ruolo \textbf{utilizza:} indica il progetto che utilizza un laboratorio. \\
+
+    \end{xltabular}
+\endgroup
+
+\newpage
+\section{Dizionario dei vincoli}
+
+\begingroup
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{2.0}
+    \begin{xltabular}{\textwidth}{l X}
+        \caption{Dizionario dei vincoli.} \label{tab:vincoli} \\
+        
+        \hline \multicolumn{1}{|l}{\textbf{Nome Vincolo}} & \multicolumn{1}{X|}{\textbf{Descrizione}} \\ \hline 
+        \endfirsthead
+        
+        \multicolumn{2}{c}%
+        {\tablename\ \thetable{} Dizionario dei vincoli} \\
+        \hline \multicolumn{1}{|l}{\textbf{Nome Vincolo}} & \multicolumn{1}{X|}{\textbf{Descrizione}} \\ \hline 
+        \endhead
+        
+        \multicolumn{2}{r}{{Continua nella pagina successiva}} \\ 
+        \hline
+        \endfoot
+        
+        \hline
+        \endlastfoot
+
+        \textbf{Validità Nome Azienda} & Il nome di un'azienda deve essere composto unicamente da caratteri alfanumerici. \\
+
+        \textbf{Validità Nome Titolare} & Il nome di un titolare deve essere composto unicamente da lettere. \\
+
+        \textbf{Dominio ruoli} & Il ruolo di un dipendente può esclusivamente essere uno solo tra "Junior", "Middle", "Senior", "Dirigente". \\
+
+        \textbf{Anzianità} & Il passaggio di ruolo da "Junior" a "Middle" deve avvenire solo dopo 3 anni di esperienza. \newline Il passaggio da "Middle" a "Senior" deve avvenire dopo 7 anni di servizio. \\
+
+        \textbf{Gestione Laboratorio} & Un laboratorio può essere gestito solo da un dipendente "Senior". \\
+
+        \textbf{Utilizzo Laboratori} & Un progetto può utilizzare al più 3 laboratori. \\
+
+        \textbf{Nome Progetto} & Il nome di ogni progetto deve essere unico nel sistema. \\
+
+        \textbf{Referenza Progetti} & Un progetto può avere come referente solo un dipendente "Senior". \\
+
+        \textbf{Responsabilità Progetti} & Un progetto può avere come responsabile solo un dipendente "Dirigente". \\
+
+        \textbf{Validità CF} & Un Codice Fiscale deve contenere al massimo 16 caratteri alfanumerici. \\
+\hline
+        \textbf{Validità Data Contratto} & La data di scadenza di un contratto non può essere precedente alla data di firma. \\
+
+        \textbf{Validità Data Carriera} & La data di promozione di un dipendente non può essere precedente alla data di prima assunzione. \\
+
+        \textbf{Consistenza Prima Assunzione} & La data di prima assunzione deve coincidere con la data di firma del primo contratto. \\
+
+        \textbf{Dominio Aumento Stipendio} & Il valore di aumento di stipendio deve essere compreso tra 0 e 1 \\
+
+        \textbf{Validità Nome e Cognome} & Il nome e cognome di ogni dipendente devono contenere almeno un carattere e solo caratteri compresi tra A-Z o a-z. \\
+
+        \textbf{Indeterminato senza scadenza} &Se il contratto di un dipendente è a tempo indeterminato allora la scadenza del contratto deve essere null. \\
+    \end{xltabular}
+\endgroup
